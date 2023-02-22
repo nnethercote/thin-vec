@@ -197,7 +197,7 @@ mod impl_details {
 
 #[cfg(feature = "gecko-ffi")]
 mod impl_details {
-    // Support for briding a gecko nsTArray verbatim into a ThinVec.
+    // Support for bridging a gecko nsTArray verbatim into a ThinVec.
     //
     // `ThinVec` can't see copy/move/delete implementations
     // from C++
@@ -289,7 +289,8 @@ mod impl_details {
 // result in us asking the allocator to needlessly overalign
 // non-empty ThinVecs containing align < 8 types in
 // zombie-mode, but not in "real" geck-ffi mode. Minor.
-#[cfg_attr(all(feature = "gecko-ffi", any(test, miri)), repr(align(8)))]
+//#[cfg_attr(all(feature = "gecko-ffi", any(test, miri)), repr(align(8)))]
+#[repr(align(8))]
 #[repr(C)]
 struct Header {
     _len: SizeType,

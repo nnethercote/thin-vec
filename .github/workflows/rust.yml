@@ -39,6 +39,8 @@ jobs:
       run: cargo test --verbose
     - name: Run tests (serde)
       run: cargo test --features=serde --verbose
+    - name: Run tests (u32-len-cap)
+      run: cargo test --tests --features=u32-len-cap --verbose
     - name: Run tests (gecko-ffi)
       run: cargo test --tests --features=gecko-ffi --verbose
   

@@ -19,8 +19,8 @@ u32-len-cap = []
 
 # Gecko specific features. These features cause thin-vec to have the same
 # layout and behaviour as nsTArray, allowing it to be used in C++ FFI. (This
-# means it effectively implies `u32-cap-len`.) Requires the empty header to be
-# statically linked in with the symbol name "sEmptyTArrayHeader"
+# means it effectively implies `u32-len-cap`.) Requires the empty header to be
+# statically linked in with the symbol name "sEmptyTArrayHeader".
 gecko-ffi = []
 
 [dependencies]
